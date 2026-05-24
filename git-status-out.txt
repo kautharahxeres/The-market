@@ -1,0 +1,6 @@
+Command failed: cd /d "c:\Users\GIDEON\Desktop\THE MARKET" && git status --short && echo --- && git remote -v
+'git' is not recognized as an internal or external command,
+operable program or batch file.
+
+'git' is not recognized as an internal or external command,
+operable program or batch file.

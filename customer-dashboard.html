@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - The Market</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">🏪 THE MARKET</a>
+            <div class="nav-links">
+                <a href="#" class="nav-link-active">Browse Products</a>
+                <div class="user-menu">
+                    <span id="userName" class="user-name"></span>
+                    <button class="btn btn-small" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search by business name, product name, or category...">
+                <button class="btn btn-search" onclick="searchProducts()">🔍 Search</button>
+            </div>
+            
+            <div class="filter-options">
+                <select id="sortBy" onchange="sortProducts()">
+                    <option value="">Sort By</option>
+                    <option value="name">Product Name (A-Z)</option>
+                    <option value="price-low">Price (Low to High)</option>
+                    <option value="price-high">Price (High to Low)</option>
+                    <option value="newest">Newest</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products-section">
+            <h2>Available Products</h2>
+            <div id="productsGrid" class="products-grid">
+                <!-- Products will be loaded here -->
+                <div class="loading-state">
+                    <p>📦 No products available yet. Check back soon!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProductModal()">&times;</span>
+            <div class="modal-body">
+                <div class="product-image-section">
+                    <img id="modalProductImage" src="" alt="Product Image" class="product-image-large">
+                </div>
+                <div class="product-details-section">
+                    <h3 id="modalProductName"></h3>
+                    <p id="modalBusinessName" class="business-name"></p>
+                    <p id="modalProductDescription" class="product-description"></p>
+                    <div class="product-meta">
+                        <span id="modalProductPrice" class="price"></span>
+                        <span id="modalProductCategory" class="category"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
