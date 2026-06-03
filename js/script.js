@@ -9,6 +9,13 @@ let currentUser = JSON.parse(localStorage.getItem('currentUser')) || null;
 // Initialize page on load
 document.addEventListener('DOMContentLoaded', () => {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const splashScreen = document.getElementById('splashScreen');
+
+    if (splashScreen) {
+        setTimeout(() => {
+            splashScreen.classList.add('hidden');
+        }, 3000);
+    }
     
     // Check if user is logged in
     if (currentUser === null && (currentPage !== 'index.html' && currentPage !== 'login.html' && currentPage !== 'register.html')) {

@@ -172,9 +172,44 @@ body {
     background-color: var(--color-light);
     border-radius: var(--border-radius);
     padding: 40px;
-    max-width: 600px;
+    max-width: 640px;
     width: 100%;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, var(--color-dark), var(--color-primary));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    color: var(--color-light);
+    text-align: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.splash-content {
+    max-width: 320px;
+}
+
+.splash-logo {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+}
+
+.splash-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    opacity: 0.9;
 }
 
 .logo-section {
@@ -255,6 +290,66 @@ body {
     padding: 20px;
     border-radius: var(--border-radius);
     border-left: 4px solid var(--color-primary);
+}
+
+@media (max-width: 900px) {
+    .welcome-content {
+        padding: 32px;
+    }
+
+    .welcome-message h2 {
+        font-size: clamp(2.1rem, 5vw, 2.8rem);
+    }
+
+    .logo-section h1 {
+        font-size: clamp(3rem, 8vw, 3.8rem);
+    }
+
+    .welcome-buttons {
+        flex-direction: column;
+    }
+
+    .welcome-buttons .btn {
+        width: 100%;
+    }
+
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .welcome-container {
+        padding: 15px;
+    }
+
+    .welcome-content {
+        padding: 24px;
+    }
+
+    .logo-section h1 {
+        font-size: 2.6rem;
+    }
+
+    .tagline,
+    .welcome-message p,
+    .lock-text,
+    .info-card p {
+        font-size: 0.95rem;
+    }
+
+    .lock-overlay {
+        padding: 16px;
+        margin: 20px 0;
+    }
+
+    .welcome-buttons {
+        gap: 12px;
+    }
+
+    .info-card {
+        padding: 18px;
+    }
 }
 
 .info-card h3 {
