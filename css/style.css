@@ -1,5 +1,5 @@
 /* ============================================
-   THE MARKET - MODERN BEAUTIFUL STYLES
+   THE MARKET - COMPLETE STYLES
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap');
@@ -51,19 +51,56 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--dark);
 }
 
-h1 {
-    font-size: 2.5rem;
-    line-height: 1.2;
+h1 { font-size: 2.5rem; line-height: 1.2; }
+h2 { font-size: 2rem; line-height: 1.3; }
+h3 { font-size: 1.5rem; line-height: 1.4; }
+
+/* ============================================
+   SPLASH SCREEN
+   ============================================ */
+
+.splash-screen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #6366f1 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    color: var(--light);
+    text-align: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-h2 {
-    font-size: 2rem;
-    line-height: 1.3;
+.splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
-h3 {
-    font-size: 1.5rem;
-    line-height: 1.4;
+.splash-content {
+    max-width: 400px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.splash-logo {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.splash-subtitle {
+    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+    opacity: 0.95;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 
 /* ============================================
@@ -170,6 +207,7 @@ h3 {
     top: 0;
     z-index: 100;
     border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+}
 
 .nav-container {
     max-width: 1400px;
@@ -183,7 +221,7 @@ h3 {
 .nav-logo {
     font-size: 26px;
     font-weight: 800;
-    color: var(--primary);
+    color: #6366f1;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -213,7 +251,7 @@ h3 {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--primary);
+    background: #6366f1;
     transition: width 0.3s ease;
 }
 
@@ -224,7 +262,7 @@ h3 {
 
 .nav-links a:hover,
 .nav-link-active {
-    color: var(--primary);
+    color: #6366f1;
 }
 
 .user-menu {
@@ -238,7 +276,7 @@ h3 {
 .user-name {
     font-size: 14px;
     font-weight: 500;
-    color: var(--primary);
+    color: #6366f1;
 }
 
 /* ============================================
@@ -289,6 +327,7 @@ h3 {
     z-index: 10;
     animation: slideUp 0.6s ease-out;
     border: 1px solid rgba(99, 102, 241, 0.1);
+}
 
 @keyframes slideUp {
     from {
@@ -299,50 +338,6 @@ h3 {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.splash-screen {
-    position: fixed;
-    inset: 0;
-    background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    color: var(--light);
-    text-align: center;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-.splash-screen.hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.splash-content {
-    max-width: 400px;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-}
-
-.splash-logo {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    font-weight: 800;
-    letter-spacing: -1px;
-    margin-bottom: 12px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.splash-subtitle {
-    font-size: clamp(1.2rem, 2.5vw, 1.6rem);
-    opacity: 0.95;
-    font-weight: 500;
-    letter-spacing: 1px;
 }
 
 .logo-section {
@@ -411,7 +406,7 @@ h3 {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, transparent 0%, rgba(16, 185, 129, 0.05) 100%);
+    background: linear-gradient(135deg, transparent 0%, rgba(99, 102, 241, 0.05) 100%);
     border-radius: var(--border-radius);
     pointer-events: none;
 }
@@ -607,14 +602,14 @@ h3 {
 }
 
 .auth-link a {
-    color: var(--primary);
+    color: #6366f1;
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
 }
 
 .auth-link a:hover {
-    color: var(--primary-dark);
+    color: #4f46e5;
     text-decoration: underline;
 }
 
@@ -872,8 +867,8 @@ h3 {
 }
 
 .image-preview:hover {
-    border-color: var(--primary);
-    background-color: rgba(16, 185, 129, 0.05);
+    border-color: #6366f1;
+    background-color: rgba(99, 102, 241, 0.05);
 }
 
 /* ============================================
@@ -894,7 +889,7 @@ h3 {
 }
 
 .products-table thead {
-    background: linear-gradient(135deg, var(--dark) 0%, #374151 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: var(--light);
 }
 
@@ -926,7 +921,7 @@ h3 {
 }
 
 .empty-state a {
-    color: var(--primary);
+    color: #6366f1;
     text-decoration: none;
     font-weight: 600;
 }
@@ -1075,13 +1070,8 @@ h3 {
 }
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
-        font-size: 1.6rem;
-    }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
 
     .welcome-container {
         padding: 30px;
